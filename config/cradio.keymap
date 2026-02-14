@@ -25,13 +25,18 @@
       compatible = "zmk,combos";
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <11 12>;
+            key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
-        combo_test_z {
+        combo_grave {
             timeout-ms = <50>;
-            key-positions = <5 6>;
+            key-positions = <2 12>;
             bindings = <&kp Z>;
+        };
+        combo_escape {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp ESC>;
         };
     };
 
