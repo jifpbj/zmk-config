@@ -28,7 +28,7 @@
             key-positions = <0 1>;
             bindings = <&kp TAB>;
         };
-    }
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
