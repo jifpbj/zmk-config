@@ -67,7 +67,7 @@
             &kp GRAVE  &kp BSLH    &kp LBKT  &kp RBKT  &bt BT_NXT      &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │    -     │    =     │          │   │          │          │          │          │          │
-          &bootloader &kp N7     &kp -      &kp =      &bt BT_PRV   &bt BT_CLR &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bootloader
+          &bootloader &kp N7     &kp MINUS   &kp EQUAL  &bt BT_PRV   &bt BT_CLR &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bootloader
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                           &kp LA(BSPC) &kp LG(BSPC)  &sys_reset    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
