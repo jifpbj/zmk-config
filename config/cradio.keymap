@@ -4,6 +4,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &hml LCTRL k1  &hml LALT k2  &hml LGUI k3  &hml LSHFT k4
@@ -95,7 +96,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                      &mt LSFT BSPC  &mt LGUI ESC     &kp ENTER   &lt 1 SPACE
+                                      &mt LSFT BSPC  &mt LGUI ESC     &lt 2 ENTER   &lt 1 SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -112,7 +113,23 @@
         //│          │          │    -     │    =     │ bt prev  │   │clear bt  │          │          │          │          │
           &bootloader &kp N7     &kp MINUS   &kp EQUAL  &bt BT_PRV   &bt BT_CLR &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bootloader
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &kp LA(BSPC) &kp LG(BSPC)  &sys_reset    &trans
+                                          &kp RA(BSPC) &kp LG(BSPC)  &sys_reset    &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        mouse_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│     1    │     2    │    3     │    4     │    5     │   │    6     │     7    │    up    │     9    │    0     │
+            &kp N1     &kp N2   &mmv MOVE_UP     &kp N4     &kp N5         &kp N6     &kp N7     &kp UP     &kp N9    &kp N0
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│    `     │    \     │    [     │    ]     │ bt next  │   │ LEFT     │ l_click  │  m_click │ r_click  │  '"      │
+  &kp GRAVE &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &bt BT_NXT      &kp LEFT   &mkp LCLK  &mkp MCLK  &mkp RCLK   &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │    -     │    =     │ bt prev  │   │clear bt  │          │          │          │          │
+          &bootloader &kp N7     &kp MINUS   &kp EQUAL  &bt BT_PRV   &bt BT_CLR &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bootloader
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                          &kp RA(BSPC) &kp LG(BSPC)  &sys_reset    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
