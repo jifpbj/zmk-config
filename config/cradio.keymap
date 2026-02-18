@@ -1,10 +1,12 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
+#include <dt-bindings/zmk/pointing.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/pointing.h>
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &hml LCTRL k1  &hml LALT k2  &hml LGUI k3  &hml LSHFT k4
@@ -45,6 +47,12 @@
             hold-trigger-on-release;
             // Trigger mods only when hitting keys on the LEFT side
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
+        };
+        mmv: {
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <100>;
+            acceleration-exponent = <1>;
         };
     };
     combos {
@@ -107,13 +115,13 @@
         //│     1    │     2    │    3     │    4     │    5     │   │    6     │     7    │    8     │     9    │    0     │
             &kp N1     &kp N2      &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9    &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│    `     │    \     │    [     │    ]     │ bt next  │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  '"      │
-            &kp GRAVE  &kp BSLH    &kp LBKT  &kp RBKT  &bt BT_NXT      &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &kp SQT
+        //│    `     │    \     │    [     │    ]     │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  '"      │
+            &kp GRAVE  &kp BSLH    &kp LBKT  &kp RBKT    &trans        &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │    -     │    =     │ bt prev  │   │clear bt  │          │          │          │          │
-          &bootloader &kp N7     &kp MINUS   &kp EQUAL  &bt BT_PRV   &bt BT_CLR &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bootloader
+        //│          │          │    -     │    =     │          │   │          │          │          │          │          │
+          &bootloader &kp N7     &kp MINUS   &kp EQUAL   &trans         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &kp RA(BSPC) &kp LG(BSPC)  &sys_reset    &trans
+                                          &kp RA(BSPC) &kp LG(BSPC)     &trans    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -121,15 +129,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│     1    │     2    │    3     │    4     │    5     │   │    6     │     7    │    up    │     9    │    0     │
-            &kp N1     &kp N2   &mmv MOVE_UP     &kp N4     &kp N5         &kp N6     &kp N7     &kp UP     &kp N9    &kp N0
+     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR    &kp N7     &kp UP     &kp N9    &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│    `     │    \     │    [     │    ]     │ bt next  │   │ LEFT     │ l_click  │  m_click │ r_click  │  '"      │
-  &kp GRAVE &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &bt BT_NXT      &kp LEFT   &mkp LCLK  &mkp MCLK  &mkp RCLK   &kp SQT
+        //│          │  m left  │  m up    │  m down  │ m right  │   │   LEFT   │ l_click  │  m_click │ r_click  │          │
+    &trans &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp LEFT   &mkp LCLK  &mkp MCLK  &mkp RCLK   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │    -     │    =     │ bt prev  │   │clear bt  │          │          │          │          │
-          &bootloader &kp N7     &kp MINUS   &kp EQUAL  &bt BT_PRV   &bt BT_CLR &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bootloader
+        //│          │          │          │          │          │   │          │          │          │          │          │
+          &bootloader &trans     &trans      &trans     &trans          &trans     &trans     &trans     &trans   &bootloader
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &kp RA(BSPC) &kp LG(BSPC)  &sys_reset    &trans
+                                          &kp RA(BSPC) &kp LG(BSPC)     &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
