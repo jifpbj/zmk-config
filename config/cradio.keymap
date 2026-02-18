@@ -48,7 +48,9 @@
             // Trigger mods only when hitting keys on the LEFT side
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
         };
-        mmv: {
+        mmv: mouse_move {
+            compatible = "zmk,behavior-mouse-move";
+            #binding-cells = <1>;
             x-input-code = <INPUT_REL_X>;
             y-input-code = <INPUT_REL_Y>;
             time-to-max-speed-ms = <100>;
