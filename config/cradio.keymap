@@ -33,7 +33,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
             // Trigger mods only when hitting keys on the RIGHT side
-            // key positions : if you press a key NOT in this list, it produces a tap
+            // key positions should be opposite hand : if you press a key NOT in this list, it produces a tap
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
         };
 
@@ -102,7 +102,7 @@
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │   O      │
-            &kp A       &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I       &kp O
+             HRML(A        R         S          T)      &kp G          &kp M    HRMR( N        E          I          O)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             HRML(Z,        X,         C,         D)      &kp V          &kp K      HRMR(H,     COMMA,     DOT,      FSLH)
