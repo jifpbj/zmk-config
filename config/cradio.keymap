@@ -18,18 +18,18 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <180>;
             bindings = <&kp>, <&kp>;
         };
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <220>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <150>;                // Enable repeat-on-tap
-            require-prior-idle-ms = <100>;       // The "Timeless" part
+            require-prior-idle-ms = <180>;       // The "Timeless" part
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
             // Trigger mods only when hitting keys on the RIGHT side
@@ -40,9 +40,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <180>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
             // Trigger mods only when hitting keys on the LEFT side
