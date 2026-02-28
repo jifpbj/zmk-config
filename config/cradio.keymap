@@ -16,8 +16,8 @@
 // Base TAPPING_RESOLUTION = 180ms; holding time = base + finger offset
 #define HM_PINKY_TIME  300  // +120ms — slowest, most deliberate
 #define HM_RINGY_TIME  270  // +90ms
-#define HM_MIDDY_TIME  240  // +60ms
-#define HM_INDEX_TIME  210  // +30ms — fastest, most active finger
+#define HM_MIDDY_TIME  260  // +60ms
+#define HM_INDEX_TIME  230  // +30ms — fastest, most active finger
 #define HM_STREAK      180  // require-prior-idle: suppress mods during typing streaks
 #define HM_REPEAT      330  // quick-tap: hold-after-tap auto-repeat window
 
@@ -46,7 +46,7 @@
             require-prior-idle-ms = <HM_STREAK>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
+            hold-trigger-key-positions = <RIGHT_KEYS>;
         };
         hml_r: hm_left_ringy {
             compatible = "zmk,behavior-hold-tap";
@@ -57,7 +57,7 @@
             require-prior-idle-ms = <HM_STREAK>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
+            hold-trigger-key-positions = <RIGHT_KEYS>;
         };
         hml_m: hm_left_middy {
             compatible = "zmk,behavior-hold-tap";
@@ -68,7 +68,7 @@
             require-prior-idle-ms = <HM_STREAK>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
+            hold-trigger-key-positions = <RIGHT_KEYS>;
         };
         hml_i: hm_left_index {
             compatible = "zmk,behavior-hold-tap";
@@ -79,7 +79,7 @@
             require-prior-idle-ms = <HM_STREAK>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
+            hold-trigger-key-positions = <RIGHT_KEYS>;
         };
         hmr_p: hm_right_pinky {
             compatible = "zmk,behavior-hold-tap";
@@ -90,7 +90,7 @@
             require-prior-idle-ms = <HM_STREAK>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
+            hold-trigger-key-positions = <LEFT_KEYS>;
         };
         hmr_r: hm_right_ringy {
             compatible = "zmk,behavior-hold-tap";
@@ -101,7 +101,7 @@
             require-prior-idle-ms = <HM_STREAK>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
+            hold-trigger-key-positions = <LEFT_KEYS>;
         };
         hmr_m: hm_right_middy {
             compatible = "zmk,behavior-hold-tap";
@@ -112,7 +112,7 @@
             require-prior-idle-ms = <HM_STREAK>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
+            hold-trigger-key-positions = <LEFT_KEYS>;
         };
         hmr_i: hm_right_index {
             compatible = "zmk,behavior-hold-tap";
@@ -123,7 +123,7 @@
             require-prior-idle-ms = <HM_STREAK>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
+            hold-trigger-key-positions = <LEFT_KEYS>;
         };
         mmv: mouse_move {
             compatible = "zmk,behavior-input-two-axis";
