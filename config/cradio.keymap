@@ -15,10 +15,10 @@
 // Per-finger hold-tap timings (sunaku: https://sunaku.github.io/home-row-mods.html)
 // Base TAPPING_RESOLUTION = 180ms; holding time = base + finger offset
 #define HM_PINKY_TIME  300  // +120ms — slowest, most deliberate
-#define HM_RINGY_TIME  270  // +90ms
-#define HM_MIDDY_TIME  260  // +60ms
-#define HM_INDEX_TIME  230  // +30ms — fastest, most active finger
-#define HM_STREAK      180  // require-prior-idle: suppress mods during typing streaks
+#define HM_RINGY_TIME  300  // +120ms — bumped to give ring→pinky rolls more room
+#define HM_MIDDY_TIME  280  // +80ms
+#define HM_INDEX_TIME  260  // +60ms
+#define HM_STREAK      200  // require-prior-idle: suppress mods during typing streaks
 #define HM_REPEAT      330  // quick-tap: hold-after-tap auto-repeat window
 
 // Bilateral key position groups
@@ -125,6 +125,15 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <LEFT_KEYS>;
         };
+        lt_thumb: layer_tap_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <HM_REPEAT>;
+            require-prior-idle-ms = <100>;
+            bindings = <&mo>, <&kp>;
+        };
         mmv: mouse_move {
             compatible = "zmk,behavior-input-two-axis";
             #binding-cells = <1>;
@@ -137,32 +146,38 @@
     combos {
       compatible = "zmk,combos";
         combo_tab {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
         combo_grave {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
             key-positions = <2 12>;
             bindings = <&kp GRAVE>;
         };
         combo_escape {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
             key-positions = <11 12>;
             bindings = <&kp ESC>;
         };
         combo_quote {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
             key-positions = <18 19>;
             bindings = <&kp SQT>;
         };
         combo_backspace {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
             key-positions = <6 7>;
             bindings = <&kp BSPC>;
         };
         combo_return {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
             key-positions = <7 8>;
             bindings = <&kp ENTER>;
         };
@@ -183,7 +198,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z       &kp X      &kp C      &kp D      &kp V          &kp K      &kp H    &kp COMMA   &kp DOT   &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                      &mt LSFT BSPC  &mt LGUI ESC     &lt 2 ENTER   &lt 1 SPACE
+                                      &mt LSFT BSPC  &mt LGUI ESC     &lt_thumb 2 ENTER   &lt_thumb 1 SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
