@@ -164,7 +164,7 @@
             bindings = <&kp ESC>;
         };
         combo_quote {
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <100>;
             key-positions = <18 19>;
             bindings = <&kp SQT>;
