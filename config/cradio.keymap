@@ -131,7 +131,6 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <HM_REPEAT>;
-            require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
         mmv: mouse_move {
