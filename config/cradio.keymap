@@ -16,6 +16,8 @@
 // Base TAPPING_RESOLUTION = 180ms; holding time = base + finger offset
 #define HM_PINKY_TIME  300  // +120ms — slowest, most deliberate
 #define HM_RINGY_TIME  300  // +120ms — bumped to give ring→pinky rolls more room
+#define HM_RINGY_R_TIME 450  // right ring: extra-high to prevent io roll misfire (never need Alt+O same hand)
+#define HM_RINGY_R_IDLE 350  // right ring: higher idle suppresses hold during typing streaks
 #define HM_MIDDY_TIME  280  // +80ms
 #define HM_INDEX_TIME  260  // +60ms
 #define HM_STREAK      220  // require-prior-idle: suppress mods during typing streaks
@@ -96,9 +98,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <HM_RINGY_TIME>;
+            tapping-term-ms = <HM_RINGY_R_TIME>;
             quick-tap-ms = <HM_REPEAT>;
-            require-prior-idle-ms = <HM_STREAK>;
+            require-prior-idle-ms = <HM_RINGY_R_IDLE>;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
