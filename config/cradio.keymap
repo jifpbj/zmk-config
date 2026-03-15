@@ -182,6 +182,12 @@
             key-positions = <7 8>;
             bindings = <&kp ENTER>;
         };
+        combo_dash {
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+            key-positions = <16 26>;
+            bindings = <&kp MINUS>;
+        };
     };
 
 
