@@ -167,7 +167,7 @@
         combo_quote {
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
-            key-positions = <18 19>;
+            key-positions = <9 19>;
             bindings = <&kp SQT>;
         };
         combo_backspace {
