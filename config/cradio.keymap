@@ -185,8 +185,44 @@
         combo_dash {
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
-            key-positions = <16 26>;
+            key-positions = <17 27>;
             bindings = <&kp MINUS>;
+        };
+        combo_b {
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+            key-positions = <3 13>;
+            bindings = <&kp B>;
+        };
+        combo_g {
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+            key-positions = <13 14>;
+            bindings = <&kp G>;
+        };
+        combo_v {
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+            key-positions = <13 23>;
+            bindings = <&kp V>;
+        };
+        combo_j {
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+            key-positions = <6 16>;
+            bindings = <&kp J>;
+        };
+        combo_m {
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+            key-positions = <16 17>;
+            bindings = <&kp M>;
+        };
+        combo_k {
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+            key-positions = <16 26>;
+            bindings = <&kp K>;
         };
     };
 
