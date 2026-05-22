@@ -197,7 +197,7 @@
         combo_g {
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
-            key-positions = <13 14>;
+            key-positions = <12 13>;
             bindings = <&kp G>;
         };
         combo_v {
