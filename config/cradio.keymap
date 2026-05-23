@@ -197,7 +197,7 @@
         combo_g {
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
-            key-positions = <12 13>;
+            key-positions = <13 14>;
             bindings = <&kp G>;
         };
         combo_v {
@@ -215,7 +215,7 @@
         combo_m {
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
-            key-positions = <16 17>;
+            key-positions = <15 16>;
             bindings = <&kp M>;
         };
         combo_k {
