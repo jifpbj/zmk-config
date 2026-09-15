@@ -256,7 +256,7 @@
             &kp GRAVE  &kp BSLH    &kp LBKT  &kp RBKT    &trans        &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │    -     │    =     │          │   │          │          │          │          │          │
-          &bootloader &kp N7     &kp MINUS   &kp EQUAL   &trans         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans
+          &kp N8       &kp N7     &kp MINUS   &kp EQUAL   &trans         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                           &kp RA(BSPC) &kp LG(BSPC)     &trans    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
